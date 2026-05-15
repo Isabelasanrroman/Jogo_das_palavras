@@ -17,7 +17,6 @@ body {
     position: relative;
 }
 
-/* brilho decorativo no fundo */
 body::before {
     content: "";
     position: absolute;
@@ -30,7 +29,6 @@ body::before {
     z-index: -1;
 }
 
-/* brilho decorativo 2 */
 body::after {
     content: "";
     position: absolute;
@@ -41,12 +39,6 @@ body::after {
     right: -200px;
     filter: blur(50px);
     z-index: -1;
-}
-
-@keyframes bgMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -68,7 +60,6 @@ body::after {
     overflow: hidden;
 }
 
-/* efeito brilho interno */
 .container::before {
     content: "";
     position: absolute;
