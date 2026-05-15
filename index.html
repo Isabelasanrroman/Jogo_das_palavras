@@ -13,6 +13,12 @@
         <!-- Tela Inicial (setup-container) -->
         <div id="setup-container">
             <input onkeydown="iniciarJogo(event)" type="text" id="nickname-input" placeholder="Digite seu nickname...">
+        
+            <select id="nivel-select" onkeydown="iniciarJogo(event)">
+                <option value="facil">Fácil</option>
+                <option value="medio">Médio</option>
+                <option value="dificil">Difícil</option>
+            </select>
         </div>
 
         <!-- Tela do Jogo (game-container) -->

@@ -19,9 +19,14 @@ const USE_API = 'https://api-palavras-8ptt.onrender.com'
 async function iniciarJogo(event) {
     if (event.key == "Enter") {
         const nickname = document.getElementById('nickname-input').value
-
         if (!nickname) {
             alert('O meu amigo, preencha o nickname')
+            return
+        }
+
+        const nivel = document.getElementById('nivel-select').value
+        if (!nivel) {
+            alert("Escolha um nível!")
             return
         }
 
@@ -30,7 +35,7 @@ async function iniciarJogo(event) {
                 method: 'POST',
                 credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify( {nickname: nickname} )
+                body: JSON.stringify({ nickname: nickname, nivel: nivel })
             }
         );
 
@@ -43,7 +48,8 @@ async function iniciarJogo(event) {
 
         setupContainer.classList.add('hidden')
         gameContainer.classList.remove('hidden')
-        document.getElementById('player-display').innerText = data.mensagem
+        document.getElementById('player-display').innerText = `Bem-vindo, ${nickname} - Nível: ${nivel}`
+
 
         buscarPalavra()
     }

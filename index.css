@@ -234,3 +234,23 @@ button:active {
 
     box-shadow: 0 6px 20px rgba(255, 100, 170, 0.12);
 }
+
+select {
+    padding: 12px;
+    border: 1.5px solid rgba(160, 69, 119, 0.6);
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    background: rgba(255, 255, 255, 0.75);
+    color: #5a0031;
+    transition: 0.3s ease;
+    margin-top: 15px;
+    width: 40%;
+    cursor: pointer;
+}
+
+select:focus {
+    border: 1.5px solid rgba(255, 105, 180, 0.85);
+    box-shadow: 0 0 14px rgba(255, 105, 180, 0.35);
+    transform: scale(1.02);
+}
