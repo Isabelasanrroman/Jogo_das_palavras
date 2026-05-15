@@ -57,8 +57,6 @@ async function buscarPalavra() {
 
     const data = await response.json()
 
-    console.log(data)
-
     dicaDisplay.innerText = `Dica: ${data.dica}`
 
     wordDisplay.innerHTML = ''
@@ -92,6 +90,10 @@ async function tentarLetra(event) {
 
         const data = await response.json()
 
+        console.log("RESPOSTA /tentativa:", data)
+
+
+
         data.posicoes.forEach(pos => {
             document.getElementById(`slot-${pos}`).innerText = caractere
         })
@@ -113,12 +115,10 @@ async function tentarLetra(event) {
             if (data.status_jogo == 'Derrota') {
                 gameMessage.style.color = 'red'
 
-                gameMessage.innerText = `${data.mensagem} A palavra era: ${data.palavra_sorteada}`
-
                 audioPerdeu.play()
                 document.body.style.background = "linear-gradient(135deg, #ff5f5f, #ffb3b3, #ffe5e5)"
 
-                await mostrarPalavraCorreta()
+                gameMessage.innerText = `${data.mensagem} A palavra era: ${data.palavra}`
 
             } else {
                 gameMessage.style.color = 'green'
